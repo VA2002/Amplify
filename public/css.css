@@ -1,0 +1,600 @@
+body {
+    background-image: linear-gradient(-60deg,rgb(155, 79, 206), rgb(137, 163, 235));
+    color: white;
+    font-family: Arial black;
+    background-size: 900% 900%;
+    animation: gradient 15s ease infinite; /*Animation added to gradient*/
+    height: 100vh;
+  }
+  /*Animation specified with keyframes*/
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  #Logo {
+      margin-bottom: -1%;
+      margin-left: 3%;
+  }
+
+  .Navigation {
+      background-color: rgb(253, 253, 253);
+      width: 101%;
+      height: 72px;
+      position: fixed;
+      margin-left: -1%;
+      margin-top: -0.7%;
+      box-shadow: 1px 1px rgb(32, 32, 32);
+      color: black;
+      z-index: 1;
+  }
+
+  #searchbar {
+      width: 350px;
+      height: 42px;
+      border-radius: 38px;
+      border-color: rgb(230, 230, 230);
+      border-style: solid;
+      background-color: rgb(248, 248, 248);
+      margin-top: -3.8%;
+      margin-left: 30%;
+  }
+
+  #searchicon {
+      margin-left: 54%;
+      margin-top: -2.8%;
+  }
+
+  #darkmode {
+      font-size: 25px;
+      margin-left: 64%;
+      margin-top: -3.3%;
+  }
+
+  #brightmode {
+    font-size: 25px;
+    margin-left: 64%;
+    margin-top: -4.9%;
+    display: none;
+}
+
+#darkmode:hover, #brightmode:hover, #youtube:hover, #instagram:hover, #twitter:hover{
+    color: rgb(151, 150, 150);
+    transition: 0.6s;
+}
+
+.Sign-In-Up {
+    background-color: white;
+    background-image: linear-gradient(-20deg, rgb(102, 118, 161),rgb(113, 69, 143));
+    color: white;
+    /* text-align: center; */
+    color: black;
+    opacity: 400%;
+    height: 655px;
+    width: 1322px;
+    margin-top: -3.2%;
+    margin-left: -0.6%;
+    display: none;
+    position: fixed;
+    z-index: 2;
+    animation: enters 0.5s ease-in-out;
+}
+
+@keyframes enters {
+    0% {opacity: 0%; margin-top: 0%}
+    100% {opacity: 100%; margin-top: -3.2%}
+  }
+
+
+#signinbox {
+    background-color: rgb(254, 254, 254);
+    /* box-shadow: 3px 3px 10px black; */
+    width: 400px;
+    height: 480px;
+    margin-top: 1%;
+    margin-left: 30%;
+    font-family: 'Bahnschrift SemiBold';
+    display: none;
+}
+
+#signindesign {
+    background-image: linear-gradient(-60deg,rgb(155, 79, 206), rgb(137, 163, 235));
+    /* box-shadow: 3px 3px 10px black; */
+    width: 400px;
+    height: 480px;
+    margin-left: -30.8%;
+    margin-top: -36.34%;
+    font-family: 'Bahnschrift SemiBold';
+    color: white;
+}
+
+#signupbox {
+    background-color: rgb(254, 254, 254);
+    /* box-shadow: 3px 3px 10px black; */
+    width: 820px;
+    height: 530px;
+    margin-top: -0.7%;
+    margin-left: -0.1%;
+    font-family: 'Bahnschrift SemiBold';
+    text-align: left;
+}
+
+#signin {
+    font-family: 'Berlin Sans FB';
+    text-align: center;
+    font-size: 19px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(77, 77, 185);
+    color: rgb(77, 77, 185);
+    width: 111px;
+    height: 30px;
+    border-radius: 18px;
+    margin-left: 73%;
+    margin-top: -5.1%;
+}
+
+#signin-text{
+    margin-top: -13.65%;
+}
+
+#signin:hover {
+    background-color: rgb(34, 34, 104);
+    color: white;
+    box-shadow: 3px 3px 6px rgb(64, 100, 218);
+    transition: 0.2s;
+}
+
+#login {
+    text-align: center;
+    font-size: 20.5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(119, 149, 246);
+    background-color: rgb(101, 131, 231);
+    color: white;
+    width: 131px;
+    height: 28px;
+}
+
+#login:hover {
+    font-size: 20.5px;
+    border-color: rgb(119, 149, 246);
+    font-family: 'Bahnschrift SemiBold';
+    background-color: white;
+    color: rgb(101, 131, 231);
+    width: 135px;
+    height: 28px;
+    transition: 0.2s;
+}
+
+#register {
+    text-align: center;
+    font-family: 'Bahnschrift SemiBold';
+    font-size: 20.5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(204, 153, 245);
+    background-color: rgb(184, 132, 226);
+    color: white;
+    width: 190px;
+    height: 29px;
+}
+
+#register:hover {
+    font-size: 20.5px;
+    border-color: rgb(204, 153, 245);
+    background-color: white;
+    color: rgb(184, 132, 226);
+    width: 195px;
+    height: 29px;
+    transition: 0.2s;
+}
+
+#circle {
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
+    border-color: black;
+    border-width: 0.5px;
+    border-style: solid;
+}
+
+#google {
+    font-size: 10px;
+}
+
+#signup {
+    font-family: 'Berlin Sans FB';
+    text-align: center;
+    font-size: 19px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(118, 68, 184);
+    color: rgb(118, 68, 184);
+    width: 120px;
+    height: 30px;
+    border-radius: 18px;
+    margin-left: 83%;
+    margin-top: -4.2%;
+}
+
+#signup-text{
+    margin-top: -12.5%;
+}
+
+#signup:hover {
+    background-color: rgb(64, 34, 104);
+    color: white;
+    box-shadow: 3px 3px 6px rgb(131, 64, 218);
+    transition: 0.2s;
+}
+
+#credential, #registerusername, #registerpassword, #registerconfirm, #registerdob, #registernationality, #registergender, #loginusername, #loginpassword  {
+    background-color: rgb(249, 249, 249);
+    border-style: none;
+    height: 40px;
+    width: 300px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+  .Menu-Open {
+      display: none;
+      margin-top: -176.2%;
+      z-index: 3;
+  }
+
+  .Menu-Black {
+      background-color: black;
+      opacity: 50%;
+      width: 101.6%;
+      height: 570.2px;
+      margin-top: 3%;
+      margin-left: -1%;
+      position: fixed;
+      z-index: 3;
+      animation: pop 1s, dissapear 2s;
+  }
+
+  @keyframes pop {
+    0% {opacity: 0%;}
+    100% {opacity: 50%;}
+  }
+
+  @keyframes disappear {
+    0% { opacity: 40%;}
+    25% { opacity: 20%;}
+    50% { opacity: 10%;}
+    75% { opacity: 5%;}
+    100% { opacity: 0%;}
+  }
+  
+  .Sidebar {
+    width: 270px;
+    height: 570.3px;
+    margin-top: 3.05%;
+    margin-left: -0.6%;
+    position: fixed;
+    box-shadow: 1px 1px rgb(32, 32, 32);
+    color: black;
+    text-decoration: none;
+    opacity: 100%;
+    z-index: 3;
+    background-color: rgb(246, 246, 246);
+    animation: appear 0.8s ease-in;
+}
+/*helps with animations*/
+@keyframes appear{
+    0% {margin-left: -30%;}
+    100% {margin-left: -0.6%;}
+}
+.Sidebar a{
+    text-decoration: none;
+    font-family: 'Bahnschrift SemiBold';
+    color: black;
+    padding: 10px 78px;
+    font-size: 18px;
+}
+
+.Sidebar a:hover{
+    text-decoration: none;
+    color: white;
+    width: 300px;
+    background-color: rgb(33, 52, 158);
+    transition: 0.5s;
+    padding: 10px 88px;
+    font-size: 18.2px;
+}
+
+#Genre {
+    font-family: Bahnschrift SemiBold;
+    font-size: 40px;
+}
+
+#Genre-About {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+
+.Songs{
+    margin-top: 6%;
+    animation: playeropen 0.5s ease-in-out;
+}
+
+#Song {
+    width: 265px;
+    height: 333px;
+    background-color: white;
+    box-shadow: 3px 3px 5px black;
+    animation: resize 0.5s;
+}
+
+@keyframes resize {
+    0% {width: 250px;}
+    100% {width: 265px;}
+  }
+
+#Pop, #Metal, #Alt {
+    margin-top: 2%;
+    margin-left: 7%;
+}
+
+#Poster {
+    width: 240px;
+    height: 200px;
+    margin-top: 1%;
+    border-style: outset;
+}
+
+#Songname {
+    font-family: 'Bahnschrift SemiBold';
+    font-size: 20px;
+    color: black;
+    margin-top: 3.2%;
+    margin-left: 2%;
+}
+
+#Artist {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 11.5px;
+    color: rgb(36, 35, 35);
+    margin-left: 2%;
+    margin-top: 1.6%;
+}
+
+#playpause {
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-image: linear-gradient(to bottom,rgb(86, 38, 117), rgb(46, 65, 116));
+}
+
+#playpause a {
+    text-decoration: none;
+    color: white;
+}
+
+#playpause:hover{
+    background-image: linear-gradient(to top,rgb(145, 83, 187), rgb(77, 100, 161));
+}
+
+#play {
+    margin-top: 25.5%;
+}
+
+#songaudio {
+    width: 265px;
+    height: 40px;
+    margin-top: 12%;
+}
+
+#nowplaying {
+    display: none;
+}
+
+.AudioPlayer {
+    margin-top: -25%;
+    display: none;
+}
+
+#player {
+     background-color: white;
+     color: black;
+     margin-top: 27.8%;
+     margin-left: -0.5%;
+     width: 50%;
+     height: 568px;
+     position: fixed;
+     animation: playeropen 0.5s ease-in-out;
+}
+
+#comments {
+    background-color: rgb(236, 236, 236);
+    color: black;
+    margin-top: 27.8%;
+    margin-left: 49.6%;
+    width: 49.8%;
+    height: 568px;
+    overflow:scroll;
+    position: fixed;
+    animation: playeropen 0.5s ease-in-out;
+}
+
+#commentpost {
+    background-color: rgb(75, 75, 194);
+    color: white;
+    font-size: 20px;
+    width: 52px;
+    height: 48px;
+}
+
+#commentpost:hover{
+    background-color: white;
+    color: rgb(75, 75, 194);
+    transition: 0.3s;
+}
+
+#commenter {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(245, 245, 245);
+}
+
+#thecomment{
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    margin-left: 2%;
+}
+
+@keyframes playeropen {
+    0% {opacity: 0%}
+    100% {opacity: 100%}
+  }
+
+#comment-type {
+    background-color: rgb(248, 246, 246);
+    border-style: none;
+    font-size: 12px;
+    height: 55px;
+    width: 555px;
+    margin-top: 4%;
+    margin-left: 1%;
+}
+
+.View-Uploads{
+    background-color: white;
+    font-family: 'Bahnschrift SemiBold';
+    color: black;
+    height: 580px;
+    width: 100%;
+    display: none;
+    margin-top: 3.1%;
+    margin-left: -0.5%;
+    position: fixed;
+    overflow:scroll;
+    z-index: 1;
+    animation: playeropen 0.5s ease-in-out;
+}
+
+#myprofile {
+    font-family: 'Berlin Sans FB';
+    text-align: center;
+    font-size: 19px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(80, 80,80);
+    color: rgb(78, 78, 78);
+    width: 118px;
+    height: 30px;
+    border-radius: 18px;
+    margin-left: 73%;
+    margin-top: -6.8%;
+    display: none;
+}
+
+
+#myprofile-text{
+    margin-top: -13.65%;
+}
+
+#myprofile:hover {
+    background-color: rgb(80, 80,80);
+    color: white;
+    box-shadow: 3px 3px 6px rgb(56, 56, 56);
+    transition: 0.2s;
+}
+
+#logout {
+    font-family: 'Berlin Sans FB';
+    text-align: center;
+    font-size: 19px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(214, 63, 63);
+    color: rgb(216, 18, 28);
+    width: 120px;
+    height: 30px;
+    border-radius: 18px;
+    margin-left: 83%;
+    margin-top: -2.6%;
+    display: none
+}
+
+#logout-text{
+    margin-top: -13%;
+}
+
+#logout:hover {
+    background-color: rgb(216, 18, 28);
+    color: white;
+    box-shadow: 3px 3px 6px rgb(248, 68, 77);
+    transition: 0.2s;
+}
+
+#uploadaudio {
+    background-image: linear-gradient(-60deg,rgb(176, 64, 251), rgb(106, 145, 255));
+    font-family: 'Cambria';
+    text-align: center;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(221, 221, 221);
+    color: white;
+    width: 135px;
+    height: 30px;
+    border-radius: 18px;
+    margin-left: 0.5%;
+    /* margin-left: 83%;
+    margin-top: -4.2%; */
+}
+
+#uploadaudio-text{
+    margin-top: 3.2%;
+}
+
+#uploadaudio:hover{
+    background-image: linear-gradient(-60deg,rgb(106, 145, 255), rgb(176, 64, 251));
+    transition: 6s;
+}
+
+#upload-name, #upload-artist, #upload-genre, #upload-imglink, #upload-rating {
+    background-color: rgb(249, 249, 249);
+    border-style: none;
+    height: 40px;
+    width: 300px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#Aud {
+    margin-top: 10%;
+    overflow: scroll;
+    height: 600px;
+    width: 1312px;
+}
+
+#Audiotable {
+    margin-top: -220%;
+    overflow: scroll;
+}
+
+#Audiolist {
+    background-color: white;
+}
+
+.Footer {
+    background-color: rgb(17, 17, 17);
+    width: 101.5%;
+    height: 70px;
+    margin-left: -1%;
+    margin-top: 11%;
+}

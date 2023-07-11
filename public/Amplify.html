@@ -1,0 +1,1215 @@
+
+<html>
+
+<head>
+    <!--Title-->
+    <title>Amplify</title>
+    <!--Connect to CSS-->
+    <link rel="stylesheet" href="css.css">
+    <!--Font Awesome Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!--JQuery just in case-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="Navigation">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span onclick="openMenu()" style='font-size:30px; margin-top: -4%;'>&#9776;</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img id="Logo" src="Amplify.png" height="70" width="202">
+        <br>
+        <!--Search-->
+        <input onclick="black()" id="searchbar" name="searchsong" type="text" name="search" placeholder="Tell us what you're looking for">
+        <br>
+        <i id="searchicon" onclick="searchSong()" class="fa-solid fa-magnifying-glass"></i>
+        <br>
+        <!--Enable dark mode-->
+        <i onclick="darkMode()" id="darkmode" class="fa-solid fa-moon"></i>
+        <br>
+        <!--Disable dark mode. Hidden by default-->
+        <i onclick="brightMode()" id="brightmode" class="fa-regular fa-sun"></i>
+        <br>
+        <!--Gets sign in div-->
+        <div id="signin" onclick="signInForm()">
+            &nbsp;<p id="signin-text"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;Sign In&nbsp;</p>
+        </div>
+        <br>
+        <!--Get sign up div-->
+        <div id="signup" onclick="signUpForm()">
+            &nbsp;<p id="signup-text"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Sign Up&nbsp;</p>
+        </div>
+        <!--To view username. Hidden when not logged in-->
+        <div id="myprofile" onclick="profile()"> &nbsp;<p id="myprofile-text"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;My
+                Profile</p>
+        </div>
+        <!--To logout. Hidden when not logged in-->
+        <div id="logout" onclick="logout()"> &nbsp;<p id="logout-text"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Logout</p>
+        </div>
+    </div>
+    <br>
+    <!--Class that contains sign in and sign up divs-->
+    <div class="Sign-In-Up">
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-angle-left" onclick="back()" style="color: white; font-size: 36px;"></i>
+        <br><br>
+        <center>
+            <div id="signinbox">
+                <br><br><br><br><br>
+                <div style="font-size: 22px;">Enter your credentials</div>
+                <br><br><br>
+                <input id="loginusername" type="text" name="loginUsername" placeholder="Username" required>
+                <br><br>
+                <input id="loginpassword" type="password" name="loginPassword" placeholder="Password" required>
+                <br><br><br>
+                <div id="login" onclick="login()">Login</div>
+            </div>
+            <div id="signindesign">
+                <br><br><br>
+                <img src="Logo.png" width="150" height="150">
+                <br><br>
+                <div style="font-size: 36px;">Hi User!</div>
+                <br>
+                <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 16px;">No
+                    Account? <u onclick="signUpForm()">Sign Up Here!</u></div>
+            </div>
+            <div id="signupbox">
+                <br>
+                <div style="font-size: 22px;">&nbsp;&nbsp;&nbsp;&nbsp;Join the Club!</div>
+                <br><br><br>
+                <center>
+                    <input id="registerusername" type="text" name="myUsername" placeholder="Username*" style="width: 620px; background-color: rgb(246, 246, 246);"
+                        required>
+                    <br><br>
+                    <input id="registerpassword" type="password" name="myPassword" placeholder="Password*" style="width: 300px; background-color: rgb(246, 246, 246); margin-left: 0%;"
+                        required>
+                    <input id="registerconfirm" type="password" placeholder="Confirm Password*" style="width: 300px; background-color: rgb(246, 246, 246); margin-left: 2%;"
+                        required>
+                    <br><br>
+                    <div style="font-family: 'Bahnschrift'; font-size: 14px; margin-left: -60%; margin-top: 1%;">Date
+                        of Birth*</div><input id="registerdob" name="myDob" type="date" placeholder="Date of Birth"
+                        style="width: 500px; background-color: rgb(246, 246, 246); margin-left: 14.4%; margin-top: -3.4%;"
+                        required>
+                    <br><br>
+                    <div style="font-family: 'Bahnschrift'; font-size: 14px; margin-left: -60%; margin-top: 1%;">Nationality</div>
+                    <!--Credit to https://www.html-code-generator.com/html/drop-down/country-names for country select tag-->
+                    <!--This is done as it is too tedious to list every single country-->
+                    <!--Option value represent country code-->
+                    <select id="registernationality" name="myNationality" style="width: 500px; background-color: rgb(246, 246, 246); margin-left: 14.4%; margin-top: -3.4%;"
+                        name="country">
+                        <option value="">Select Country</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Aland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AI">Anguilla</option>
+                        <option value="AQ">Antarctica</option>
+                        <option value="AG">Antigua and Barbuda</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AM">Armenia</option>
+                        <option value="AW">Aruba</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BS">Bahamas</option>
+                        <option value="BH">Bahrain</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BB">Barbados</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BZ">Belize</option>
+                        <option value="BJ">Benin</option>
+                        <option value="BM">Bermuda</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                        <option value="BA">Bosnia and Herzegovina</option>
+                        <option value="BW">Botswana</option>
+                        <option value="BV">Bouvet Island</option>
+                        <option value="BR">Brazil</option>
+                        <option value="IO">British Indian Ocean Territory</option>
+                        <option value="BN">Brunei Darussalam</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="BF">Burkina Faso</option>
+                        <option value="BI">Burundi</option>
+                        <option value="KH">Cambodia</option>
+                        <option value="CM">Cameroon</option>
+                        <option value="CA">Canada</option>
+                        <option value="CV">Cape Verde</option>
+                        <option value="KY">Cayman Islands</option>
+                        <option value="CF">Central African Republic</option>
+                        <option value="TD">Chad</option>
+                        <option value="CL">Chile</option>
+                        <option value="CN">China</option>
+                        <option value="CX">Christmas Island</option>
+                        <option value="CC">Cocos (Keeling) Islands</option>
+                        <option value="CO">Colombia</option>
+                        <option value="KM">Comoros</option>
+                        <option value="CG">Congo</option>
+                        <option value="CD">Congo, Democratic Republic of the Congo</option>
+                        <option value="CK">Cook Islands</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="CI">Cote D'Ivoire</option>
+                        <option value="HR">Croatia</option>
+                        <option value="CU">Cuba</option>
+                        <option value="CW">Curacao</option>
+                        <option value="CY">Cyprus</option>
+                        <option value="CZ">Czech Republic</option>
+                        <option value="DK">Denmark</option>
+                        <option value="DJ">Djibouti</option>
+                        <option value="DM">Dominica</option>
+                        <option value="DO">Dominican Republic</option>
+                        <option value="EC">Ecuador</option>
+                        <option value="EG">Egypt</option>
+                        <option value="SV">El Salvador</option>
+                        <option value="GQ">Equatorial Guinea</option>
+                        <option value="ER">Eritrea</option>
+                        <option value="EE">Estonia</option>
+                        <option value="ET">Ethiopia</option>
+                        <option value="FK">Falkland Islands (Malvinas)</option>
+                        <option value="FO">Faroe Islands</option>
+                        <option value="FJ">Fiji</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="GF">French Guiana</option>
+                        <option value="PF">French Polynesia</option>
+                        <option value="TF">French Southern Territories</option>
+                        <option value="GA">Gabon</option>
+                        <option value="GM">Gambia</option>
+                        <option value="GE">Georgia</option>
+                        <option value="DE">Germany</option>
+                        <option value="GH">Ghana</option>
+                        <option value="GI">Gibraltar</option>
+                        <option value="GR">Greece</option>
+                        <option value="GL">Greenland</option>
+                        <option value="GD">Grenada</option>
+                        <option value="GP">Guadeloupe</option>
+                        <option value="GU">Guam</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="GG">Guernsey</option>
+                        <option value="GN">Guinea</option>
+                        <option value="GW">Guinea-Bissau</option>
+                        <option value="GY">Guyana</option>
+                        <option value="HT">Haiti</option>
+                        <option value="HM">Heard Island and Mcdonald Islands</option>
+                        <option value="VA">Holy See (Vatican City State)</option>
+                        <option value="HN">Honduras</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="HU">Hungary</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="ID">Indonesia</option>
+                        <option value="IR">Iran, Islamic Republic of</option>
+                        <option value="IQ">Iraq</option>
+                        <option value="IE">Ireland</option>
+                        <option value="IM">Isle of Man</option>
+                        <option value="IL">Israel</option>
+                        <option value="IT">Italy</option>
+                        <option value="JM">Jamaica</option>
+                        <option value="JP">Japan</option>
+                        <option value="JE">Jersey</option>
+                        <option value="JO">Jordan</option>
+                        <option value="KZ">Kazakhstan</option>
+                        <option value="KE">Kenya</option>
+                        <option value="KI">Kiribati</option>
+                        <option value="KP">Korea, Democratic People's Republic of</option>
+                        <option value="KR">Korea, Republic of</option>
+                        <option value="XK">Kosovo</option>
+                        <option value="KW">Kuwait</option>
+                        <option value="KG">Kyrgyzstan</option>
+                        <option value="LA">Lao People's Democratic Republic</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LB">Lebanon</option>
+                        <option value="LS">Lesotho</option>
+                        <option value="LR">Liberia</option>
+                        <option value="LY">Libyan Arab Jamahiriya</option>
+                        <option value="LI">Liechtenstein</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="LU">Luxembourg</option>
+                        <option value="MO">Macao</option>
+                        <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+                        <option value="MG">Madagascar</option>
+                        <option value="MW">Malawi</option>
+                        <option value="MY">Malaysia</option>
+                        <option value="MV">Maldives</option>
+                        <option value="ML">Mali</option>
+                        <option value="MT">Malta</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MQ">Martinique</option>
+                        <option value="MR">Mauritania</option>
+                        <option value="MU">Mauritius</option>
+                        <option value="YT">Mayotte</option>
+                        <option value="MX">Mexico</option>
+                        <option value="FM">Micronesia, Federated States of</option>
+                        <option value="MD">Moldova, Republic of</option>
+                        <option value="MC">Monaco</option>
+                        <option value="MN">Mongolia</option>
+                        <option value="ME">Montenegro</option>
+                        <option value="MS">Montserrat</option>
+                        <option value="MA">Morocco</option>
+                        <option value="MZ">Mozambique</option>
+                        <option value="MM">Myanmar</option>
+                        <option value="NA">Namibia</option>
+                        <option value="NR">Nauru</option>
+                        <option value="NP">Nepal</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="AN">Netherlands Antilles</option>
+                        <option value="NC">New Caledonia</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="NI">Nicaragua</option>
+                        <option value="NE">Niger</option>
+                        <option value="NG">Nigeria</option>
+                        <option value="NU">Niue</option>
+                        <option value="NF">Norfolk Island</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="NO">Norway</option>
+                        <option value="OM">Oman</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="PW">Palau</option>
+                        <option value="PS">Palestinian Territory, Occupied</option>
+                        <option value="PA">Panama</option>
+                        <option value="PG">Papua New Guinea</option>
+                        <option value="PY">Paraguay</option>
+                        <option value="PE">Peru</option>
+                        <option value="PH">Philippines</option>
+                        <option value="PN">Pitcairn</option>
+                        <option value="PL">Poland</option>
+                        <option value="PT">Portugal</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="QA">Qatar</option>
+                        <option value="RE">Reunion</option>
+                        <option value="RO">Romania</option>
+                        <option value="RU">Russian Federation</option>
+                        <option value="RW">Rwanda</option>
+                        <option value="BL">Saint Barthelemy</option>
+                        <option value="SH">Saint Helena</option>
+                        <option value="KN">Saint Kitts and Nevis</option>
+                        <option value="LC">Saint Lucia</option>
+                        <option value="MF">Saint Martin</option>
+                        <option value="PM">Saint Pierre and Miquelon</option>
+                        <option value="VC">Saint Vincent and the Grenadines</option>
+                        <option value="WS">Samoa</option>
+                        <option value="SM">San Marino</option>
+                        <option value="ST">Sao Tome and Principe</option>
+                        <option value="SA">Saudi Arabia</option>
+                        <option value="SN">Senegal</option>
+                        <option value="RS">Serbia</option>
+                        <option value="CS">Serbia and Montenegro</option>
+                        <option value="SC">Seychelles</option>
+                        <option value="SL">Sierra Leone</option>
+                        <option value="SG">Singapore</option>
+                        <option value="SX">Sint Maarten</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="SB">Solomon Islands</option>
+                        <option value="SO">Somalia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="GS">South Georgia and the South Sandwich Islands</option>
+                        <option value="SS">South Sudan</option>
+                        <option value="ES">Spain</option>
+                        <option value="LK">Sri Lanka</option>
+                        <option value="SD">Sudan</option>
+                        <option value="SR">Suriname</option>
+                        <option value="SJ">Svalbard and Jan Mayen</option>
+                        <option value="SZ">Swaziland</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="SY">Syrian Arab Republic</option>
+                        <option value="TW">Taiwan, Province of China</option>
+                        <option value="TJ">Tajikistan</option>
+                        <option value="TZ">Tanzania, United Republic of</option>
+                        <option value="TH">Thailand</option>
+                        <option value="TL">Timor-Leste</option>
+                        <option value="TG">Togo</option>
+                        <option value="TK">Tokelau</option>
+                        <option value="TO">Tonga</option>
+                        <option value="TT">Trinidad and Tobago</option>
+                        <option value="TN">Tunisia</option>
+                        <option value="TR">Turkey</option>
+                        <option value="TM">Turkmenistan</option>
+                        <option value="TC">Turks and Caicos Islands</option>
+                        <option value="TV">Tuvalu</option>
+                        <option value="UG">Uganda</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="UM">United States Minor Outlying Islands</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="UZ">Uzbekistan</option>
+                        <option value="VU">Vanuatu</option>
+                        <option value="VE">Venezuela</option>
+                        <option value="VN">Viet Nam</option>
+                        <option value="VG">Virgin Islands, British</option>
+                        <option value="VI">Virgin Islands, U.s.</option>
+                        <option value="WF">Wallis and Futuna</option>
+                        <option value="EH">Western Sahara</option>
+                        <option value="YE">Yemen</option>
+                        <option value="ZM">Zambia</option>
+                        <option value="ZW">Zimbabwe</option>
+                    </select>
+                    <br><br>
+                    <div style="font-family: 'Bahnschrift'; font-size: 14px; margin-left: -60%; margin-top: 1%;">Gender*</div>
+                    <select id="registergender" name="myGender" style="width: 500px; background-color: rgb(246, 246, 246); margin-left: 14.4%; margin-top: -3.4%;"
+                        name="gender">
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="RNS">Rather Not Say</option>
+                    </select>
+                    <br><br><br><br>
+                    <div id="register" onclick="signup()">Create Account</div>
+                    <br><br>
+                    <div style="font-family: 'Bahnschrift'; font-size: 10px;">*Required</div>
+                </center>
+            </div>
+        </center>
+    </div>
+    <!--Here you can upload audio-->
+    <div class="View-Uploads">
+        <br>&nbsp;&nbsp;<i class="fa-solid fa-angle-left" onclick="back()" style="color: rgb(66, 66, 66); font-size: 36px;"></i>
+        <br><br>
+        <div style="font-size: 22px;text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;Upload New Audio</div>
+        <center>
+            <form action='/upload' method='post' encType="multipart/form-data">
+                <br><br><br>
+                <input id="upload-name" type="text" name="myAudioName" placeholder="Upload Name*">
+                <br><br>
+                <input id="upload-artist" type="text" name="myArtist" placeholder="Artist*">
+                <br><br>
+                <select id="upload-genre" style="" name="myGenre">
+                    <option value="">Select Genre</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Heavymetal">Heavy Metal</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Hiphop">Hip Hop</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Edm">EDM</option>
+                    <option value="Country">Country</option>
+                    <option value="Altrock">Alternative Rock</option>
+                    <option value="Dubstep">Dubstep</option>
+                    <option value="Classical">Classical</option>
+                    <option value="Kpop">K-Pop</option>
+                    <option value="Ballad">Ballad</option>
+                    <option value="Instrumental">Instrumental</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Spiritual">Spiritual</option>
+                    <option value="Soundtrack">Soundtrack</option>
+                    <option value="Whitenoise">White Noise</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Newage">New Age</option>
+                    <option value="Podcast">Podcast</option>
+                    <option value="Othermisc">Other/Misc</option>
+                </select>
+                <br><br>
+                <select id="upload-rating" style="" name="myRating">
+                    <option value="">Select Rating</option>
+                    <option value="PG">PG</option>
+                    <option value="PG13">PG-13</option>
+                    <option value="G">G</option>
+                    <option value="Expl">Explicit</option>
+                    <option value="R">R</option>
+                    <option value="NC17">NC-17</option>
+                </select>
+                <br><br>
+                Image:&nbsp;<input type="text" id="upload-imglink" name="myImg">
+                <!-- <input type="file" name="myImg" accept="image/*" /> -->
+                <br><br>
+                Audio:&nbsp;<input type="file" name="myFile" accept="audio/*" required />
+                <br><br>
+                <input type='submit' id="uploadaudio" value='Upload' />
+                <br>
+            </form>
+
+        </center>
+    </div>
+    <!--Search results appear in this div-->
+    <div id="Searchresults"></div>
+    <!--This div class is dedicated for loading songs of pop, heavy metal and alternative rock genre. Basically it is to promote different songs-->
+    <div class="Songs">
+        <div id="Genre">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            POP
+            <div id="Genre-About">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                To get you in sync with what's mainstream
+            </div>
+        </div>
+        <div id="Popsongs"></div>
+        <br><br><br>
+        <div id="Genre">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            HEAVY METAL
+            <div id="Genre-About">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                To awaken your inner rockstar
+            </div>
+        </div>
+        <div id="hm"></div>
+        <br><br><br>
+        <div id="Genre">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ALTERNATIVE ROCK
+            <div id="Genre-About">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Because not all treasures are discovered yet
+            </div>
+        </div>
+        <div id="Altrock"></div>
+        <br>
+    </div>
+    <center>
+        <!--Loading all audios in alphabetical order-->
+        <div id="Aud" name="Aud">
+        </div>
+    </center>
+    <!--Loads audio player and comment section-->
+    <div class="Audioplayer">
+        <div id="comments">
+            <input id="comment-type" type="text" name="comment" placeholder="Type your comment here"><button id="commentpost"
+                onclick="addComment()"><i class="fa-solid fa-arrow-right"></i></button>
+            </table>
+        </div>
+        <div id="player">&nbsp;&nbsp;<i class="fa-solid fa-angle-left" onclick="back()" style="color: gray; font-size: 36px;"></i>
+        </div>
+    </div>
+    <br>
+    <!--Opens the sidebar, which also has a copyright message-->
+    <div class="Menu-Open">
+        <div onclick="closeMenu()" class="Menu-Black">
+        </div>
+        <div class="Sidebar">
+            <br><br>
+            <center>
+                <a onclick="back()">&nbsp;<i class="fa-solid fa-house"></i>&nbsp;Home&nbsp;&nbsp;</a>
+                <br><br>
+                <a onclick="showUploads()"><i class="fa-solid fa-upload"></i>&nbsp;Uploads</a>
+                <br><br>
+                <a href="#Aud" onclick="back()"><i class="fa-solid fa-music"></i>&nbsp;&nbsp;Songs&nbsp;&nbsp;</a>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div style="font-size: 12px; font-family:Arial; margin-top: -0.8%;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ©2023-2024 Amplify | All Rights Reserved </div>
+            </center>
+        </div>
+    </div>
+
+    <!--This is where the script begins. No seperate file as the functions don't work then-->
+    <script>
+
+        //Set up this function when window loads
+        window.onload = init;
+
+        //Introducing various DOM variables that we need for the functions
+        let menu = document.querySelector(".Menu-Open");
+        let sideBar = document.querySelector(".Sidebar");
+        let nav = document.querySelector(".Navigation");
+        let searchBar = document.getElementById("searchbar");
+        let searchIcon = document.getElementById("searchicon");
+        let song = document.querySelector(".Songs");
+        let play = document.getElementById("nowplaying");
+        let signIn = document.querySelector(".Sign-In-Up");
+        let signUp = document.getElementById("signUp");
+        let viewUploads = document.querySelector(".View-Uploads");
+        let footer = document.querySelector(".Footer");
+        let audDiv = document.getElementById("Aud");
+        let pop = document.getElementById("Popsongs");
+        let alt = document.getElementById("Altrock");
+        let metal = document.getElementById("hm");
+        let openPlayer = document.querySelectorAll("#playpause");
+        let un = document.getElementById("loginusername").value;
+        let pw = document.getElementById("loginpassword").value;
+        let loggedIn = false;
+        menuIndex = 0;
+        musicIndex = 0;
+
+        //To open the sidebar
+        function openMenu() {
+            menu.style.display = "inherit";
+            sideBar.style.display = "inherit";
+            musicIndex1 = 0;
+            musicIndex2 = 0;
+            musicIndex3 = 0;
+        }
+
+        //To add a translucent black div
+        function black() {
+            menu.style.display = "inherit";
+            sideBar.style.display = "none";
+
+        }
+
+        //To close sidebar
+        function closeMenu() {
+            menu.style.display = "none";
+            menuIndex--;
+        }
+
+        //Enabling darkmode and changing CSS properties of various elements
+        function darkMode() {
+            nav.style.color = "White";
+            nav.style.background = "rgb(22, 28, 65)";
+            searchBar.style.background = "#c8d5e3";
+            searchBar.style.color = "White";
+            sideBar.style.background = "#939fab";
+            sideBar.style.color = "White";
+            document.getElementById("player").style.background = "#939fab";
+            document.getElementById("comments").style.background = "rgb(22, 28, 65)";
+            document.getElementById("comments").style.color = "White";
+            document.getElementById("signin").style.marginTop = "-3.6%";
+            document.getElementById("signup").style.marginTop = "-4.2%";
+            document.getElementById("myprofile").style.marginTop = "-5.5%";
+            document.getElementById("logout").style.marginTop = "-2.5%";
+            document.getElementById("darkmode").style.display = "none";
+            document.getElementById("brightmode").style.display = "inherit";
+            document.getElementById("Logo").src = "AmplifyDark.png";
+            document.getElementById("signinbox").style.background = "rgb(36, 41, 59)";
+            document.getElementById("signinbox").style.color = "White";
+            document.getElementById("signupbox").style.background = "rgb(36, 41, 59)";
+            document.getElementById("signupbox").style.color = "White";
+            viewUploads.style.background = "rgb(36, 41, 59)";
+            viewUploads.style.color - "White";
+        }
+
+        //Disabling darkmode and changing CSS properties of various elements
+        function brightMode() {
+            nav.style.color = "Black";
+            nav.style.background = "rgb(253, 253, 253)";
+            searchIcon.style.color = "Black";
+            searchBar.style.background = "rgb(248, 248, 248)";
+            searchBar.style.color = "Black";
+            sideBar.style.background = "rgb(246, 246, 246)";
+            sideBar.style.color = "Black";
+            document.getElementById("player").style.background = "White";
+            document.getElementById("comments").style.background = "rgb(236, 236, 236)";
+            document.getElementById("comments").style.color = "Black";
+            document.getElementById("signin").style.marginTop = "-5.3%";
+            document.getElementById("signup").style.marginTop = "-4.3%";
+            document.getElementById("myprofile").style.marginTop = "-7%";
+            document.getElementById("logout").style.marginTop = "-2.5%";
+            document.getElementById("darkmode").style.display = "inherit";
+            document.getElementById("brightmode").style.display = "none";
+            document.getElementById("Logo").src = "Amplify.png";
+            document.getElementById("signinbox").style.background = "rgb(254, 254, 254)";
+            document.getElementById("signinbox").style.color = "Black";
+            document.getElementById("signupbox").style.background = "rgb(254, 254, 254)";
+            document.getElementById("signupbox").style.color = "Black";
+            viewUploads.style.background = "White";
+            viewUploads.style.color - "Black";
+        }
+
+        //Handling the audio player div
+        function audio() {
+            song.style.display = "none";
+            audDiv.style.display = "none";
+            document.querySelector(".Audioplayer").style.display = "inherit";
+            showComments();
+            handlePlayer();
+        }
+
+        //Opens sign in div
+        function signInForm() {
+            menu.style.display = "none";
+            sideBar.style.display = "none";
+            signIn.style.display = "inherit";
+            audDiv.style.display = "none";
+            song.style.display = "none";
+            document.querySelector(".Audioplayer").style.display = "none";
+            document.getElementById("signinbox").style.display = "inherit";
+            document.getElementById("signindesign").style.display = "inherit";
+            document.getElementById("signupbox").style.display = "none";
+        }
+
+        //Opens sign up div
+        function signUpForm() {
+            menu.style.display = "none";
+            sideBar.style.display = "none";
+            signIn.style.display = "inherit";
+            audDiv.style.display = "none";
+            song.style.display = "none";
+            document.querySelector(".Audioplayer").style.display = "none";
+            document.getElementById("signupbox").style.display = "inherit";
+            document.getElementById("signinbox").style.display = "none";
+            document.getElementById("signindesign").style.display = "none";
+            footer.style.display = "none";
+        }
+
+        //handling login related functions
+        function login() {
+            sessionLogin();
+            userLoginCheck();
+        }
+
+        //logging out the user with both client side code and AJAX
+        function logout() {
+            //XML HTTP Request
+            let xhttp = new XMLHttpRequest();
+            //Adding AJAX functionality
+            xhttp.onreadystatechange = function () {
+                //If status is 200 and readystate is 4, it indicates successful functioning
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    //Receiving Express response
+                    let sessionEnd = JSON.parse(xhttp.responseText);
+                    //If sessionEnd is true
+                    if (sessionEnd) {
+                        alert("Logged Out")
+                        document.getElementById("signin").style.display = "inherit";
+                        document.getElementById("signup").style.display = "inherit";
+                        document.getElementById("myprofile").style.display = "none";
+                        document.getElementById("logout").style.display = "none";
+                        document.querySelector(".Audioplayer").style.display = "none";
+                        viewUploads.style.display = "none";
+                        menu.style.display = "none";
+                        song.style.display = "inherit";
+                        loggedIn = false;
+                        console.log(loggedIn);
+                    }
+                    //In case of an error 
+                    else {
+                        console.log('Error:', xhttp.statusText);
+                    }
+                }
+            };
+            //open logout function from express
+            xhttp.open('GET', '/logout');
+            xhttp.send();
+        }
+
+        //Shows upload div
+        function showUploads() {
+            //If user is logged in, boolean is set to true, and hence this happens
+            if (loggedIn == true) {
+                console.log(loggedIn);
+                menu.style.marginTop = "-10%;";
+                menu.style.display = "none";
+                viewUploads.style.display = "inherit";
+                //audDiv.style.display = "none";
+                //footer.style.marginTop = "-79%";
+            }
+            //If user is not logged in, boolean is set to false, and hence this happens
+            else if (loggedIn == false) {
+                console.log(loggedIn);
+                alert('Login first');
+            }
+        }
+
+        //an attempt to disable comments text box if the user is not logged in
+        function commentDisabler() {
+            if (loggedIn == true) {
+                console.log(loggedIn);
+                document.getElementById("comment-type").disabled = false;
+            }
+            else if (loggedIn == false) {
+                console.log(loggedIn);
+                document.getElementById("comment-type").disabled = true;
+            }
+        }
+
+        //this involves audio file upload
+        function uploadAudio() {
+            let audFile = document.getElementById("Uploadaud").files;
+            if (audFile.length !== 1) {
+                alert("Please select a file to upload");
+                return;
+            }
+            //adding form data
+            const audData = new FormData();
+            audData.append('myFile', audFile[0]);
+            //using XMLHTTP reguest
+            let audReq = new XMLHttpRequest();
+            audReq.onload = () => {
+                let response = JSON.parse(audReq.responseText);
+                if ("error" in response)//Error from server
+                    alert("Error");
+                else
+                    alert("Uploaded successfully");
+                console.log(audFile);
+            };
+
+            //Send off message to upload file
+            audReq.open('POST', '/upload');
+            audReq.send(audData);
+        }
+
+        //an attempt to upload images, in the actual website, internet links are used as image is secondary to audio
+        function uploadImage() {
+            let imgFile = document.getElementById("Uploadaud").files;
+            if (imgFile.length !== 1) {
+                alert("Please select a file to upload");
+                return;
+            }
+            const imgData = new FormData();
+            imgData.append('myFile', imgFile[0]);
+
+            let imgReq = new XMLHttpRequest();
+            imgReq.onload = () => {
+                let response = JSON.parse(imgReq.responseText);
+                if ("error" in response)//Error from server
+                    alert("Error");
+                else
+                    alert("Uploaded successfully");
+                console.log(imgFile);
+            };
+
+            //Send off message to upload file
+            imgReq.open('POST', '/upload');
+            imgReq.send(imgData);
+        }
+
+        //Uploads the selected file to the server, image part is an attempt
+        function uploadFile() {
+            uploadAudio();
+            uploadImage();
+        }
+
+        //closes any div on top of home and sets everything back to normal
+        function back() {
+            signIn.style.display = "none";
+            audDiv.style.display = "inherit";
+            song.style.display = "inherit";
+            menu.style.display = "none";
+            viewUploads.style.display = "none";
+            document.getElementById("signinbox").style.display = "none";
+            document.getElementById("signindesign").style.display = "none";
+            document.querySelector(".Audioplayer").style.display = "none";
+        }
+
+        function backForUpload() {
+            viewUploads.style.display = "none";
+            song.style.display = "inherit";
+            footer.style.display = "inherit";
+            footer.style.marginTop = "-120%";
+            audDiv.style.display = "inherit";
+        }
+
+        //Get pointers to parts of the DOM after the page has loaded.
+        function init() {
+            showAudio();
+            showAudioPop();
+            showAudioAlt();
+            showAudioMetal();
+            cookieChecker();
+            showComments();
+            handlePlayer();
+        }
+
+        //AJAX to handle express session login
+        function sessionLogin() {
+            //HTTP request
+            let xhttp = new XMLHttpRequest();
+            //DOM variables needed
+            let un = document.getElementById("loginusername").value;
+            let pw = document.getElementById("loginpassword").value;
+            console.log(un + ", " + pw);
+            //Telling what to do
+            xhttp.onreadystatechange = function () {
+                //When ready state is 4 and status is 200
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    alert("Login successful");
+                    signIn.style.display = "none";
+                    song.style.display = "inherit";
+                    audDiv.style.display = "inherit";
+                    loggedIn = true;
+                    document.getElementById("signin").style.display = "none";
+                    document.getElementById("signup").style.display = "none";
+                    document.getElementById("myprofile").style.display = "inherit";
+                    document.getElementById("logout").style.display = "inherit";
+                    profile();
+                }
+            };
+            //given all entries are not null or blank, the following happens
+            if (un !== null && pw !== null && un !== "" && pw !== "") {
+                let userObject = {
+                    loginUsername: un,
+                    loginPassword: pw
+                };
+                profile(un);
+                //converting userObject to JSON
+                var data = JSON.stringify(userObject);
+                //using login function from express
+                xhttp.open('POST', '/login', true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                console.log(userObject.loginUsername);
+                xhttp.send(data);
+            }
+            //if login can't happen
+            else { alert("Failure"); }
+        }
+        
+        //gets username and alerts username
+        function profile(username) {
+            alert("Your Username: " + username);
+        }
+
+        function moveToAudio() {
+            audDiv.style.display = "inherit";
+            viewUploads.style.display = "none";
+            song.style.display = "none";
+            showAudio();
+        }
+
+        /* Loads audio details and adds them to the page. */
+        function showAudio() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let audArray = JSON.parse(xhttp.responseText);
+                    //Return if no audio
+                    if (audArray.length === 0)
+                        return;
+                    //Build string with customer data
+                    let htmlStr = '<center><table cellspacing = "0" cellpadding = "60">';
+                    //summoning audio info from express server 
+                    for (let key in audArray) {
+                        htmlStr += '<tr id = "Audiolist"><td id = "songname">' + audArray[key].Name + '</td><td id="Artist">' + audArray[key].Artist + '</td><td id="Artist">' + audArray[key].Genre + '<br>(Rated ' + audArray[key].Rating + ')' + '</td><td><audio controls><source src="' + audArray[key].AudioFile + '" type="audio/mp3" controls></audio></td>' + '</td><td id="Artist">Uploaded by<br><i class="fa-solid fa-user"></i>&nbsp;' + audArray[key].Username + '</td></tr>';
+                        console.log(audArray[key].Name)
+                    }
+                    htmlStr += "</table></center>";
+                    //add this HTML code to the div
+                    audDiv.innerHTML = htmlStr;
+                }
+            };
+
+            //Request data for all audio
+            xhttp.open("GET", "/audio", true);
+            xhttp.send();
+        }
+
+        /*For pop genre audio*/
+        function showAudioPop() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let popArray = JSON.parse(xhttp.responseText);
+                    //Return if no audio
+                    if (popArray.length === 0)
+                        return;
+                    //Build string with audio data
+                    let htmlPop = '<table id="Pop" cellpadding="4"><tr>';
+                    for (let key in popArray) {
+                        document.getElementsByName("openPlayer").values[key] = popArray[key].AudioID;
+                        htmlPop += '<td><div id="Song"><center><img id="Poster" src="' + popArray[key].ImageFile + '"></center><div id="Songname"><b>' + popArray[key].Name + '</b></div>'
+                        htmlPop += '<div id="Artist">' + popArray[key].Artist + '<br><br><center><button id="playpause" type = "submit" onclick="audio()" name = "openPlayer" value="' + popArray[key].AudioID + '"><i id="play" class="fa-solid fa-play"></i></button></center><audio id="songaudio" src=""></audio></div></td>';
+                        console.log(key + "," + popArray[key].AudioID + "," + document.getElementsByName("openPlayer").values[key])                     
+                    }
+                    //Add audio to page.
+                    htmlPop += "</tr></table>";
+                    pop.innerHTML = htmlPop;
+                }
+            };
+
+            //Request data for all audio of pop genre
+            xhttp.open("GET", "/audiopop", true);
+            xhttp.send();
+        }
+
+        /* Loads alternative rock audio details and adds them to the page. */
+        function showAudioAlt() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                //When ready state is 4 and status is 200
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let altArray = JSON.parse(xhttp.responseText);
+                    //Return if no audio
+                    if (altArray.length === 0)
+                        return;
+                    //Build string with audio data
+                    let htmlAlt = '<table id="Alt" cellpadding="4"><tr>';
+                    for (let key in altArray) {
+                        htmlAlt += '<td><div id="Song"><center><img id="Poster" src="' + altArray[key].ImageFile + '"></center><div id="Songname"><b>' + altArray[key].Name + '</b></div>'
+                        htmlAlt += '<div id="Artist">' + altArray[key].Artist + '<br><br><center><div id="playpause" onclick="audio()"><i id="play" class="fa-solid fa-play"></i></div></center><audio id="songaudio" src=""></audio></div></td>';
+                        console.log(altArray[key].Name)
+                    }
+                    //Add customers to page.
+                    htmlAlt += "</tr></table>";
+                    alt.innerHTML = htmlAlt;
+                    console.log(htmlAlt);
+                }
+            };
+
+            //Request data for all customers
+            xhttp.open("GET", "/audioalt", true);
+            xhttp.send();
+        }
+
+        /* Loads audio details and adds them to the page. */
+        function showAudioMetal() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let metalArray = JSON.parse(xhttp.responseText);
+
+                    //Return if no customers
+                    if (metalArray.length === 0)
+                        return;
+
+                    //Build string with customer data
+                    let htmlMetal = '<table id="Metal" cellpadding="4"><tr>';
+                    for (let key in metalArray) {
+                        htmlMetal += '<td><div id="Song"><center><img id="Poster" src="' + metalArray[key].ImageFile + '"></center><div id="Songname"><b>' + metalArray[key].Name + '</b></div>'
+                        htmlMetal += '<div id="Artist">' + metalArray[key].Artist + '<br><br><center><div id="playpause" onclick="audio()"><i id="play" class="fa-solid fa-play"></i></div></center><audio id="songaudio" src=""></audio></div></td>';
+                        console.log(metalArray[key].Name)
+                        //htmlStr += ("<td>" + usrArr[key].email + "</td><td>" + usrArr[key].age + "</td></tr>");
+                    }
+                    //Add customers to page.
+                    htmlMetal += "</tr></table>";
+                    metal.innerHTML = htmlMetal;
+                    console.log(htmlMetal);
+                }
+            };
+
+            //Request data for all customers
+            xhttp.open("GET", "/audiometal", true);
+            xhttp.send();
+        }
+
+        function showComments() {
+            //Set up XMLHttpRequest
+            let comments = document.getElementById("comments");
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                //When ready state is 4 and status is 200
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let commentArray = JSON.parse(xhttp.responseText);
+                    //Return if no comment
+                    if (commentArray.length === 0)
+                        return;
+                    //Build string with commdng data
+                    let htmlComment = '<input id="comment-type" type="text" name="comment" placeholder="Type your comment here"><button id = "commentpost" onclick="addComment()"><i class="fa-solid fa-arrow-right"></i></button>';
+                    for (let key in commentArray) {
+                        htmlComment += '<tr id="commenter">&nbsp;&nbsp;<i class="fa-solid fa-user">&nbsp;' + commentArray[key].Username + '</i><br>';
+                        htmlComment += '<div id="thecomment">' + commentArray[key].UserComment + '</div><br>';
+                        htmlComment += '</tr>';
+                    }
+                    //Add comments to page.
+                    htmlComment += "</table>";
+                    comments.innerHTML = htmlComment;
+                    console.log(htmlComment);
+                }
+            };
+
+            //Request data for all comments
+            xhttp.open("GET", "/comment", true);
+            xhttp.send();
+        }
+
+        //ATTEMPT AT CHECKING COOKIES
+
+        // function cookieChecker() {
+        //     //document.cookie = cookie;
+        //     if (document.cookie != "") {
+        //         // alert("Cookie:" + document.cookie);
+        //         // login();
+        //     }
+        //     else {
+        //         // alert("Cookie does not exist");
+        //         // let cookies = document.cookie;
+        //         //setCookie();
+        //     }
+        // }
+
+        //searches song by getting info from express, includes both client side JS and AJAX
+        function searchSong() {
+            search = document.getElementById("searchbar").value;
+            results = document.getElementById("Searchresults");
+            document.querySelector(".Audioplayer").style.display = "none";
+            song.style.display = "none";
+            audDiv.style.display = "none";
+            menu.style.display = "none";
+            viewUploads.style.display = "none";
+            console.log(search);
+            //XML HTTP request
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {
+                //when ready state is 4 and status is 200
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //getting search info and making it JSON
+                    let searches = JSON.parse(xhttp.responseText);
+                    //Building up HTML string to add to page
+                    let htmlSearch = '<br><br><table id="Pop" cellpadding="4"><tr>';
+                    //get search results
+                    for (let audio in searches) {
+                        htmlSearch += '<td><div id="Song"><center><img id="Poster" src="' + searches[audio].ImageFile + '"></center><div id="Songname"><b>' + searches[audio].Name + '</b></div>'
+                        htmlSearch += '<div id="Artist">' + searches[audio].Artist + '<br><br><center><button id="playpause" type = "submit" onclick="audio()" name = "openPlayer" value="' + searches[audio].AudioID + '"><i id="play" class="fa-solid fa-play"></i></button></center><audio id="songaudio" src=""></audio></div></td>';
+                        console.log(searches[audio].Name)
+                    }
+                    //sending results to div
+                    htmlSearch += '</tr></table><br><br>';
+                    results.innerHTML = htmlSearch;
+                }
+            };
+            //given search is not null or empty
+            if (search !== null && search !== "") {
+                //make an object
+                let searchObject = {
+                    searchItem: search
+                };
+                //make it JSON and send it to express
+                var find = JSON.stringify(searchObject);
+                console.log(searchObject);
+                console.log(find);
+                xhttp.open("POST", "/search", true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                xhttp.send(find);
+            }
+        }
+
+        function addComment() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            //text from comment text box
+            let comment = document.getElementById("comment-type").value;
+
+            xhttp.onreadystatechange = function () {
+                //when ready state is 4 and status is 200
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    alert("Comment added");
+                }
+            };
+            //given comment is not empty
+            if (comment !== "") {
+                //make an object
+                let commentObject = {
+                    comment: comment
+                };
+                //make it JSON and send it
+                var data = JSON.stringify(commentObject);
+                xhttp.open('POST', '/addcomment', true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                console.log(commentObject.comment);
+                xhttp.send(data);
+            }
+            //if there is error
+            else { alert("Failure"); }
+        }
+
+        //Attempt at loading a specific selected audio on player
+        function handlePlayer() {
+            console.log("Loading")
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {//Called when data returns from server
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //Convert JSON to a JavaScript object
+                    let playerArray = JSON.parse(xhttp.responseText);
+                    let htmlPlayer = '&nbsp;&nbsp;<i class="fa-solid fa-angle-left" onclick="back()" style="color: gray; font-size: 36px;"></i><br><center>';
+
+                    for (let i in playerArray) {
+                        htmlPlayer += '<img src="' + playerArray[i].ImageFile + '" width="330" height="295">';
+                        htmlPlayer += '<br>';
+                        htmlPlayer += '<div id="Songname"><b>' + playerArray[i].Name + '</b><i><div id="Artist">' + playerArray[i].Artist + '</div></i></div><br>';
+                        htmlPlayer += '<div id="Artist">Uploaded by <i class="fa-solid fa-user"></i>&nbsp;' + playerArray[i].Username + '</div><br><br>';
+                        htmlPlayer += '<audio src="' + playerArray[i].AudioFile + '" controls> Your browser does not support the audio element. </audio>';
+                    }
+                    htmlPlayer += "</center>"
+                    document.getElementById("player").innerHTML = htmlPlayer;
+                    console.log(htmlPlayer);
+
+                }
+            };
+            if (openPlayer.value !== "" && openPlayer.value !== null) {
+                openPlayer.forEach((item) => {
+                    item.addEventListener('click', () => {
+                        console.log(item.value);
+                        x = item.value;
+                        let openObject = {
+                            id: x
+                        }
+                    });
+                });
+                var open = JSON.stringify(openObject);
+                console.log(openObject);
+                console.log(open);
+                xhttp.open("POST", "/player", true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                xhttp.send(open);
+
+            }
+        }
+
+        //to sign up, this sends data to express
+        function signup() {
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            //introducing variables
+            let userName = document.getElementById("registerusername").value;
+            let passWord = document.getElementById("registerpassword").value;
+            let confirm = document.getElementById("registerconfirm").value;
+            let nationality = document.getElementById("registernationality").value;
+            let dob = document.getElementById("registerdob").value;
+            let gender = document.getElementById("registergender").value;
+
+            xhttp.onreadystatechange = function () {
+                //when ready state is 4 and status is 200
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    alert(userName + " has been successfully added");
+                    signUp.style.display = "none";
+                    song.style.display = "inherit";
+                    audDiv.style.display = "inherit";
+                    document.getElementById("signin").style.display = "none";
+                    document.getElementById("signup").style.display = "none";
+                    document.getElementById("myprofile").style.display = "inherit";
+                    document.getElementById("logout").style.display = "inherit";
+                }
+            };
+            //given no entry is empty
+            if (userName !== "" && passWord !== "" && nationality !== "" && dob !== "" && gender !== "") {
+                //make an object
+                let userObject = {
+                    myUsername: userName,
+                    myPassword: passWord,
+                    myNationality: nationality,
+                    myDob: dob,
+                    myGender: gender
+                };
+                //make it JSON and send it
+                var data = JSON.stringify(userObject);
+                xhttp.open('POST', '/register', true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                console.log(userObject.username);
+                xhttp.send(data);
+            }
+            //if error
+            else { alert("Failure"); }
+
+        }
+
+
+        //to check if user is loggged in
+        function userLoginCheck() {
+            console.log("userLoginCheck in progress");
+            //Set up XMLHttpRequest
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    let check = JSON.parse(xhttp.responseText);
+                    if (check.login) {
+                        alert("Logged in");
+                    } else {
+                        alert("Not logged in");
+                    }
+                }
+            };
+            //open checklogin function
+            xhttp.open('GET', '/checklogin', true);
+            xhttp.send();
+        }
+    </script>
+
+</body>
+<!--The end-->
+</html>

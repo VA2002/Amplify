@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src = "https://unpkg.com/chai/chai.js"></script>
+        <script src = "https://unpkg.com/mocha/mocha.js"></script>
+    </head>
+    <body>
+        <div id = "mocha"></div>
+        <script class = "mocha-init">
+            mocha.setup('bdd');
+        </script>
+        <script type = "mocha" src = "test.js"></script>
+        <script type = "module" class = "mocha-exec">
+            mocha.run()
+        </script>
+    </body>
+</html>
